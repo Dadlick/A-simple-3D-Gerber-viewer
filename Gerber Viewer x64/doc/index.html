@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+lang="en">
+<head>
+<title>grbv @ piratery.net</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<link rel="stylesheet" href="doc.css" type="text/css"/>
+</head>
+<body>
+
+<div class="chapter" id="header">
+<img width="128" height="128" alt="prtr-grbv" src="logo.png"/>
+<p>A simple 3D Gerber viewer</p>
+<p class="bar">
+<a href="index.html">home</a> &middot;
+<a href="index.html#installation">installation</a> &middot;
+<a href="index.html#manual">manual</a> &middot;
+<a href="index.html#hacking">hacking</a> &middot;
+<a href="screenshots.html">screenshots</a> &middot;
+<a href="downloads/">downloads</a>
+</p>
+</div>
+
+<div class="chapter">
+<a id="about"/><h1>1 - About</h1>
+
+<p>This tool is a simple 3D viewer for Gerber files. It's only displaying PCBs, and is primarily intended as a validation tool to review Gerber files before sending them to a PCB fab house.</p>
+
+<p>Only recent Windows (Vista and later) are supported so far, 32bits and 64bits.</p>
+
+<h2>Support</h2>
+
+<p>All support is done by email, through <a href="mailto:jerome.vuarand@gmail.com">jerome.vuarand@gmail.com</a>.</p>
+
+<p>Feel free to ask for further developments. I can't guarantee that I'll develop everything you ask, but I want my code to be as useful as possible, so I'll do my best to help you. You can also send me request or bug reports (for code and documentation). All constructive criticism is welcome. All non-constructive criticism will be thoroughly examined, considered, printed, shredded, burned and used as fertilizer for carbon capturing plants :D.</p>
+
+<p>Whenever the application terminates with a Lua error, that error has been reported online automatically. To help identify errors that happened to you, please fill in the <code>user</code> configuration option (see <a href="#hacking"><em>hacking</em></a> below). If for some reason you don't want to effortlessly contribute to improving this wonderful software that you got for free, you can disable error reports by setting the <code>report_errors</code> configuration option to <code>false</code> (no link to the <em>hacking</em> section here, you're on your own to find it :D).</p>
+
+<h2>Credits</h2>
+
+<p>This tool was inspired by the <a href="http://mayhewlabs.com/3dpcb">Mayhew Labs online 3D Gerber viewer</a>. It was started to overcome some limitations from the Mayhew Labs viewer.</p>
+
+<p>The logo was inspired by another kind of <a href="http://www.gerber.com/">Gerber</a>. Hopefully it will be seen as a tribute rather than a copyright infringement.</p>
+
+<p>This tool is written and maintained by <a href="mailto:jerome.vuarand@gmail.com">Jérôme Vuarand</a>.</p>
+
+<p>It is available under a <a href="LICENSE.txt">MIT-style license</a>.</p>
+
+
+</div>
+
+<div class="chapter">
+<a id="installation"/><h1>2 - Installation</h1>
+
+<p>Go to the <a href="downloads/">downloads page</a>. Download the latest ZIP file for your architecture. Unzip it somewhere. Run grbv.exe or grbv.com (see <a href="#manual"><em>manual</em></a> below).</p>
+
+</div>
+
+<div class="chapter">
+<a id="manual"/><h1>3 - Manual</h1>
+
+<p>The tool comes in two forms. A file grbv.exe is expected to be run by clicking it, by creating a shortcut to it, or by associating it with your gerber files. It's a purely GUI application. A file grbv.com is expected to be run from the command line. It logs stuff to the console, opening one if necessary. It's better suited to override some parameters from the command line. If you set the tool directory in your %PATH% environment variable, the grbv.com application should take precedence, so that simply typing <code>grbv</code> from a command line starts the console version.</p>
+
+<p>Once the viewer is started, you can drop Gerber files on its window, or use the keys F5 to F8 to load demo boards (taken from the Mayhew Labs viewer, these are open hardware projects). Note that it may take a while to load the boards, but subsequent loading (and colorscheme changes) will be faster thanks to some caching (assuming the Gerber files don't change).</p>
+
+<p>Gerber files are identified by their extension. You have to drop all files belonging to a board at the same time if you want to view them together. You can also pass the root name of the board on the command line (with the <code>-board</code> option, see <a href="#hacking"><em>hacking</em></a> below) without extension, and the tool will try to load all files with same root name. The extensions are detected as follow:</p>
+
+<ul>
+    <li><code>.GTL</code> top copper</li>
+    <li><code>.GTS</code> top soldermask</li>
+    <li><code>.GTO</code> top silkscreen</li>
+    <li><code>.GTP</code> top paste</li>
+    <li><code>.GBL</code> bottom copper</li>
+    <li><code>.GBS</code> bottom soldermask</li>
+    <li><code>.GBO</code> bottom silkscreen</li>
+    <li><code>.GBP</code> bottom paste</li>
+    <li><code>.GML</code> milling</li>
+    <li><code>.OLN</code> outline</li>
+    <li><code>.OUT</code> outline</li>
+    <li><code>.DRD</code> drill</li>
+    <li><code>.TXT</code> drill</li>
+</ul>
+
+<p>You can also press the keys F9 to F12 to change the color scheme. They are loosely based on the <a href="http://mayhewlabs.com/3dpcb">Mayhew Labs viewer</a>, the <a href="http://www.seeedstudio.com/depot/fusion-pcb-service-2-layers-p-835.html?cPath=70_71">Seeed Studio PCB fab</a>, the <a href="http://oshpark.com/">OSH Park PCB fab</a>, and <a href="http://wiki.altium.com/display/ADOH/Visualization+of+the+Route+Tool+Path">Altium software</a> respectively.</p>
+
+<p>You can then zoom in and out using the mouse wheel, rotate the board using a left click drag, and move the board around using a right click drag.</p>
+
+<p>You can press the <em>Print Screen</em> key to take a screenshot. This will be saved as a PNG file in the tool root directory. Note when the tool is run in translucent mode (see <a href="#hacking"><em>hacking</em></a> below to turn it off), the PNG files will have a transparent background (which can be quite handy to post pictures of your boards on a colorful website). To avoid post-processing, you can resize the window to fit the expected image size (the PNG file have the same resolution as the window). To make that easier you can set the <code>width</code> and <code>height</code> configuration options (see <a href="#hacking"><em>hacking</em></a> below) to start the tool at that resolution.</p>
+
+<p>You can press the <em>S</em> key to save the currently loaded board as a textured 3D mesh to import the board in another application. This will open a file selection dialog that lets you select the name of the exported mesh. It should have the .obj file extension, as the mesh is in <a href="https://en.wikipedia.org/wiki/Wavefront_.obj_file">Wavefront .obj format</a>. In the same directory three other files will be created: a material file with the extension .mtl, a top texture with the extension -top.png and a bottom texture with the extension -bottom.png. All four files are required to import the mesh into your other application.</p>
+
+<p>Press escape, alt-F4 or click the close button on the title bar to close the viewer.</p>
+
+</div>
+
+<div class="chapter">
+<a id="hacking"/><h1>4 - Hacking</h1>
+
+<p>This tool is written in Lua, and can be modified quite easily without recompilation.</p>
+
+<h2>Configuration files</h2>
+
+<p>The first thing you can modify in grbv are configuration files. Several modules use such a file: it should be named <em>module</em>.conf, in the root directory of the tool. Modules reading configuration files include <code>gui</code>, <code>render</code>, <code>display</code>. The tool itself (which main code is in grbv.lua) will look for a grbv.conf file. Look at the modules source code to see available options. For example to replace the translucent background with a white background, you can write the following to grbv.conf:</p>
+
+<pre><code>translucent = false
+</code></pre>
+
+<p>To configure the user name used in error reports (to help me find you in my logs), you can write:</p>
+
+<pre><code>user = "John Doe &lt;john.doe@example.com&gt;"
+</code></pre>
+
+<p>The configuration files are Lua scripts, with globals writes going to the respective module configuration table. If a file doesn't exist (most don't in the grbv packages), you can simply create a new empty text file, with notepad for example.</p>
+
+<h2>Command line arguments</h2>
+
+<p>In addition to grbv.conf, all the main script configuration parameters can be set from the command line. The parameter name should be prefixed with a dash, and the parameter passed in a separate argument. For example to start with a white background you can start grbv like that:</p>
+
+<pre><code>grbv -translucent false
+</code></pre>
+
+<p>Strings don't need to be quoted. To load a specific board from the command line, you can write:</p>
+
+<pre><code>grbv -board path/to/my/board
+</code></pre>
+
+<p>To use a specific color scheme (see below), you can write:</p>
+
+<pre><code>grbv -colors flex
+</code></pre>
+
+<h2>Color schemes</h2>
+
+<p>Colors schemes are defined in separate files in the <code>colors</code> subdirectory. They are actually board templates, since they define not only the various layers colors, but also the board thickness. The four templates assigned to the Fxx keys can be changed with the <code>quick_colors</code> configuration option. The default color used can be set with the <code>colors</code> configuration option, and it falls back to <code>quick_colors[1]</code> if it exists, and the template named <code>'default'</code> otherwise.</p>
+
+<p>The templates are Lua files. Feel free to modify them or create your own (and eventually submit them to me for inclusion in future releases).</p>
+
+<h2>Source code</h2>
+
+<p>All Lua modules and the main tool script are packaged as interpreted source files, so you can modify them directly in your installation to change the tool behaviour. Just explore all the .lua files.</p>
+
+<p>The C code is available on the <a href="https://bitbucket.org/doub/mechanicus">BitBucket repository of this tool</a>. It's not straightforward to compile it or all the dependencies, so feel free to ask for help if you're interested.</p>
+
+<h2>Assets</h2>
+
+<p>All data files can also be modified or replaced quite easily. In particular the GLSL shaders used for rendering can be modified if you want some specific look. I provided the application icon as a separate <code>gerber.ico</code> file for shortcuts or file associations.</p>
+
+</div>
+
+<div class="chapter" id="footer">
+<small>Last update: 2016-09-02 17:52:20 BST</small>
+</div>
+
+</body>
+</html>
+
