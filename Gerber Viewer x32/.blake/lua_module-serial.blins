@@ -1,0 +1,14 @@
+-- This is a generated file, please do not edit it. Refer to blake documentation to know more about it.
+return {
+	dependencies = { },
+	files = {
+		"serial.lua",
+		{
+			"util.lua",
+			dirs = "serial",
+		},
+	},
+	name = "serial",
+	type = "lua_module",
+}
+-- vi: filetype=lua

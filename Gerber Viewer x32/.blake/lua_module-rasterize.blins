@@ -1,0 +1,11 @@
+-- This is a generated file, please do not edit it. Refer to blake documentation to know more about it.
+return {
+	dependencies = { },
+	files = { {
+		"boards.lua",
+		dirs = "rasterize",
+	} },
+	name = "rasterize",
+	type = "lua_module",
+}
+-- vi: filetype=lua

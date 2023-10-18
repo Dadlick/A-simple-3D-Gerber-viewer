@@ -1,0 +1,12 @@
+-- This is a generated file, please do not edit it. Refer to blake documentation to know more about it.
+return {
+	dependencies = {
+		"kernel32",
+		"uuid",
+		"ucrt",
+	},
+	files = { },
+	name = "alg",
+	type = "library",
+}
+-- vi: filetype=lua

@@ -1,0 +1,8 @@
+-- This is a generated file, please do not edit it. Refer to blake documentation to know more about it.
+return {
+	dependencies = { },
+	files = { "rasterize.exe" },
+	name = "rasterize",
+	type = "program",
+}
+-- vi: filetype=lua

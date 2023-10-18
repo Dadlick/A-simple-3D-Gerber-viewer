@@ -1,0 +1,8 @@
+-- This is a generated file, please do not edit it. Refer to blake documentation to know more about it.
+return {
+	dependencies = { },
+	files = { "crashdump.dll" },
+	name = "crashdump",
+	type = "library",
+}
+-- vi: filetype=lua

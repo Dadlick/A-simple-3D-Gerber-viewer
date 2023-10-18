@@ -1,0 +1,71 @@
+-- This is a generated file, please do not edit it. Refer to blake documentation to know more about it.
+return {
+	dependencies = { },
+	files = {
+		"boards.lua",
+		"bom.lua",
+		"excellon.lua",
+		"gerber.lua",
+		"svg.lua",
+		"dxf.lua",
+		{
+			"aperture.lua",
+			dirs = "boards",
+		},
+		{
+			"drawing.lua",
+			dirs = "boards",
+		},
+		{
+			"extents.lua",
+			dirs = "boards",
+		},
+		{
+			"interpolation.lua",
+			dirs = "boards",
+		},
+		{
+			"macro.lua",
+			dirs = "boards",
+		},
+		{
+			"manipulation.lua",
+			dirs = "boards",
+		},
+		{
+			"panelization.lua",
+			dirs = "boards",
+		},
+		{
+			"path.lua",
+			dirs = "boards",
+		},
+		{
+			"pathmerge.lua",
+			dirs = "boards",
+		},
+		{
+			"region.lua",
+			dirs = "boards",
+		},
+		{
+			"spline.lua",
+			dirs = "boards",
+		},
+		{
+			"templates.lua",
+			dirs = "boards",
+		},
+		{
+			"blocks.lua",
+			dirs = "gerber",
+		},
+		{
+			"blocks.lua",
+			dirs = "excellon",
+		},
+	},
+	name = "boards",
+	type = "lua_module",
+}
+-- vi: filetype=lua

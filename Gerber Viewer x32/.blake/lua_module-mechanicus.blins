@@ -1,0 +1,87 @@
+-- This is a generated file, please do not edit it. Refer to blake documentation to know more about it.
+return {
+	dependencies = { },
+	files = {
+		"glo.lua",
+		"newproxy.lua",
+		{
+			"assets.lua",
+			dirs = "engine",
+		},
+		{
+			"drag.lua",
+			dirs = "engine",
+		},
+		{
+			"fonts.lua",
+			dirs = "engine",
+		},
+		{
+			"gui.lua",
+			dirs = "engine",
+		},
+		{
+			"render.lua",
+			dirs = "engine",
+		},
+		{
+			"report.lua",
+			dirs = "engine",
+		},
+		{
+			"signal.lua",
+			dirs = "engine",
+		},
+		{
+			"time.lua",
+			dirs = "engine",
+		},
+		{
+			"trajectories.lua",
+			dirs = "engine",
+		},
+		{
+			"fbo.lua",
+			dirs = "engine\\display",
+		},
+		{
+			"shader.lua",
+			dirs = "engine\\display",
+		},
+		{
+			"default.lua",
+			dirs = "engine\\renderers",
+		},
+		{
+			"simple.lua",
+			dirs = "engine\\renderers",
+		},
+		{
+			"camera.lua",
+			dirs = "engine\\scene",
+		},
+		{
+			"utils.lua",
+			dirs = "engine\\scene",
+		},
+		{
+			"CheckError.lua",
+			dirs = "gl",
+		},
+		{
+			"extensions.lua",
+			dirs = "gl",
+		},
+		{
+			"profiles.lua",
+			dirs = "gl",
+		},
+		{
+			"version.lua",
+			dirs = "gl",
+		},
+	},
+	name = "mechanicus",
+	type = "lua_module",
+}
+-- vi: filetype=lua

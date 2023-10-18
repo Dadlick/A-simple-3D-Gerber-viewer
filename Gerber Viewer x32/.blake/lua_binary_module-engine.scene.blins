@@ -1,0 +1,11 @@
+-- This is a generated file, please do not edit it. Refer to blake documentation to know more about it.
+return {
+	dependencies = { },
+	files = { {
+		"scene.lud",
+		dirs = "engine",
+	} },
+	name = "engine.scene",
+	type = "lua_binary_module",
+}
+-- vi: filetype=lua
