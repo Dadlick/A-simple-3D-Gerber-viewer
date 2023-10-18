@@ -1,0 +1,21 @@
+-- This is a generated file, please do not edit it. Refer to blake documentation to know more about it.
+return {
+	dependencies = { },
+	files = {
+		{
+			"boards.lua",
+			dirs = "grbv",
+		},
+		{
+			"tesselation.lua",
+			dirs = "grbv",
+		},
+		{
+			"templates.lua",
+			dirs = "grbv",
+		},
+	},
+	name = "grbv",
+	type = "lua_module",
+}
+-- vi: filetype=lua

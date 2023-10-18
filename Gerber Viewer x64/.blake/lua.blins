@@ -1,0 +1,9 @@
+-- This is a generated file, please do not edit it. Refer to blake documentation to know more about it.
+return {
+	dependencies = { },
+	export = { define = { "LUA_BUILD_AS_DLL" } },
+	files = { "lua.dll" },
+	name = "lua",
+	type = "library",
+}
+-- vi: filetype=lua

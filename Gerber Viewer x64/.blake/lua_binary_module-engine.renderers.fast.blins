@@ -1,0 +1,11 @@
+-- This is a generated file, please do not edit it. Refer to blake documentation to know more about it.
+return {
+	dependencies = { },
+	files = { {
+		"fast.lud",
+		dirs = "engine\\renderers",
+	} },
+	name = "engine.renderers.fast",
+	type = "lua_binary_module",
+}
+-- vi: filetype=lua

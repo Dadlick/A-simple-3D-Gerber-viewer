@@ -1,0 +1,16 @@
+-- This is a generated file, please do not edit it. Refer to blake documentation to know more about it.
+return {
+	dependencies = {
+		"crashdump",
+		"lua",
+		"shell32",
+		"user32",
+		"kernel32",
+		"uuid",
+		"ucrt",
+	},
+	files = { },
+	name = "launcher",
+	type = "library",
+}
+-- vi: filetype=lua
